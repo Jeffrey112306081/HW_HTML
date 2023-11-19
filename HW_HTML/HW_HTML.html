@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+
+    ul {
+      list-style-type: square;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #audioPlayer {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+  <title>My Homepage</title>
+</head>
+<body>
+
+  <h1>Welcome to My Homepage!</h1>
+
+  <h2>Calendar Feature:</h2>
+  <input type="date" id="myCalendar">
+
+  <h2>My List:</h2>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>Explore YouTube:</h2>
+  <a href="https://www.youtube.com" target="_blank">Visit YouTube</a>
+
+  <h2>My Favorite Songs:</h2>
+  <button onclick="playPauseSong('song1.m4a')">Play/Pause Song 1</button>
+  <button onclick="playPauseSong('song2.m4a')">Play/Pause Song 2</button>
+  <button onclick="playPauseSong('song3.mp3')">Play/Pause Song 3</button>
+
+  <audio id="audioPlayer" controls>
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    var audio = document.getElementById('audioPlayer');
+
+    function playPauseSong(songUrl) {
+      if (audio.src === songUrl) {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      } else {
+        audio.src = songUrl;
+        audio.play();
+      }
+    }
+  </script>
+
+</body>
+</html>
